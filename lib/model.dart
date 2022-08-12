@@ -43,7 +43,6 @@ class Meal {
     required this.strMeasure3,
     required this.strMeasure4,
     required this.strMeasure5,
-    required this.strSource,
   });
 
   String idMeal;
@@ -63,7 +62,6 @@ class Meal {
   String strMeasure3;
   String strMeasure4;
   String strMeasure5;
-  String strSource;
 
   factory Meal.fromJson(Map<String, dynamic> json) => Meal(
         idMeal: json["idMeal"],
@@ -83,7 +81,6 @@ class Meal {
         strMeasure3: json["strMeasure3"],
         strMeasure4: json["strMeasure4"],
         strMeasure5: json["strMeasure5"],
-        strSource: json["strSource"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -104,6 +101,5 @@ class Meal {
         "strMeasure3": strMeasure3,
         "strMeasure4": strMeasure4,
         "strMeasure5": strMeasure5,
-        "strSource": strSource,
       };
 }

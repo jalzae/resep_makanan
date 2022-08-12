@@ -36,14 +36,16 @@ class DetailPage extends StatelessWidget {
                   bottom: 10,
                   left: 30,
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.redAccent,
+                      ),
                       onPressed: () => {launcherUrl(Uri.parse(arr.strYoutube))},
-                      child: const Text('Source'))),
-              Positioned(
-                  bottom: 60,
-                  left: 30,
-                  child: ElevatedButton(
-                      onPressed: () => {launcherUrl(Uri.parse(arr.strSource))},
-                      child: const Text('Video'))),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.play_arrow),
+                          Text(' Youtube'),
+                        ],
+                      ))),
             ],
           ),
           Container(
@@ -58,7 +60,9 @@ class DetailPage extends StatelessWidget {
                 textRow(arr.strIngredient4, arr.strMeasure4),
                 textRow(arr.strIngredient5, arr.strMeasure5),
                 textHeading("Instructions :"),
-                textPara(arr.strInstructions)
+                Container(
+                    margin: const EdgeInsets.all(12),
+                    child: textPara(arr.strInstructions))
               ],
             ),
           )

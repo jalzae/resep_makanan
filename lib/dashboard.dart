@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          Get.to(const DetailPage(),
+                          Get.to(() => const DetailPage(),
                               arguments: {"first": controller.isResult[index]});
                         },
                         child: Container(
