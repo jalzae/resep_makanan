@@ -4,7 +4,6 @@ import 'package:resep_masakan/controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 MainControll controller = Get.find();
-var arr = controller.isSelected.value;
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -19,8 +18,9 @@ class DetailPage extends StatelessWidget {
                 },
                 icon: const Icon(Icons.chevron_left)),
             title: ListTile(
-              title: Text(arr.strMeal),
-              subtitle: Text('${arr.strCategory}-${arr.strArea}'),
+              title: Text(controller.isSelected.value.strMeal),
+              subtitle: Text(
+                  '${controller.isSelected.value.strCategory}-${controller.isSelected.value.strArea}'),
             ),
           ),
           body: ListView(
@@ -29,7 +29,7 @@ class DetailPage extends StatelessWidget {
               Stack(
                 children: [
                   Image.network(
-                    arr.strMealThumb,
+                    controller.isSelected.value.strMealThumb,
                     fit: BoxFit.fitHeight,
                   ),
                   Positioned(
@@ -39,8 +39,10 @@ class DetailPage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             primary: Colors.redAccent,
                           ),
-                          onPressed: () =>
-                              {launcherUrl(Uri.parse(arr.strYoutube))},
+                          onPressed: () => {
+                                launcherUrl(Uri.parse(
+                                    controller.isSelected.value.strYoutube))
+                              },
                           child: Row(
                             children: const [
                               Icon(Icons.play_arrow),
@@ -55,15 +57,21 @@ class DetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     textHeading("Ingredients :"),
-                    textRow(arr.strIngredient1, arr.strMeasure1),
-                    textRow(arr.strIngredient2, arr.strMeasure2),
-                    textRow(arr.strIngredient3, arr.strMeasure3),
-                    textRow(arr.strIngredient4, arr.strMeasure4),
-                    textRow(arr.strIngredient5, arr.strMeasure5),
+                    textRow(controller.isSelected.value.strIngredient1,
+                        controller.isSelected.value.strMeasure1),
+                    textRow(controller.isSelected.value.strIngredient2,
+                        controller.isSelected.value.strMeasure2),
+                    textRow(controller.isSelected.value.strIngredient3,
+                        controller.isSelected.value.strMeasure3),
+                    textRow(controller.isSelected.value.strIngredient4,
+                        controller.isSelected.value.strMeasure4),
+                    textRow(controller.isSelected.value.strIngredient5,
+                        controller.isSelected.value.strMeasure5),
                     textHeading("Instructions :"),
                     Container(
                         margin: const EdgeInsets.all(12),
-                        child: textPara(arr.strInstructions))
+                        child: textPara(
+                            controller.isSelected.value.strInstructions))
                   ],
                 ),
               )
