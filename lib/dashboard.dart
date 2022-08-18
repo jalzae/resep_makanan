@@ -30,21 +30,7 @@ class HomePage extends StatelessWidget {
                 'https://cdn0-production-images-kly.akamaized.net/kutsJcqqYV0-9pDI3l6YEl2v7xQ=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1367799/original/048059200_1475843806-Masakan_Indonesia.jpg',
                 fit: BoxFit.fitHeight,
               ),
-              const Positioned(
-                bottom: 10,
-                left: 30,
-                child: Text(
-                  "Resep Makanan",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 207, 18, 18),
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 26.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+             
             ],
           ),
           Container(
